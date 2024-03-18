@@ -1,10 +1,9 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layouts/Navbar";
-import { ClerkProvider } from "@clerk/nextjs";
 
-const dm_sans = DM_Sans({ subsets: ["latin"] });
+const dm_sans = DM_Sans({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",

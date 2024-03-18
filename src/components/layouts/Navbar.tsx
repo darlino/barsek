@@ -15,7 +15,7 @@ const Navbar: FC<Props> = ({ exit = false }) => {
         alt="logo"
         width={1200}
         height={1200}
-        className="lg:w-24 w-12 object-cover"
+        className="w-24  object-cover"
         src="/images/logo.png"
       />
       {!exit ? (
