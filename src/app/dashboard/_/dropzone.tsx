@@ -81,6 +81,9 @@ export default function Dropzone() {
   const ffmpegRef = useRef<any>(null);
   const [defaultValues, setDefaultValues] = useState<string>("video");
   const [selcted, setSelected] = useState<string>("...");
+  const [img_ext, setImgExt] = useState<string[]>([""]);
+  const [vid_ext, setVidExt] = useState<string[]>([""]);
+  const [aud_ext, setAudExt] = useState<string[]>([""]);
   const accepted_files = {
     "image/*": [
       ".jpg",
@@ -304,7 +307,7 @@ export default function Dropzone() {
             {actions.map((action: Action, i: any) => (
               <div
                 key={i}
-                className="w-full rounded cursor-pointer group shadow-md p-3 grid grid-cols-5 gap-5"
+                className="w-full rounded cursor-pointer group shadow-md p-3 grid grid-cols-4 lg:grid-cols-5 gap-5"
               >
                 {!is_loaded && (
                   <Skeleton className="h-full w-full -ml-10 cursor-progress absolute rounded-xl" />
@@ -322,7 +325,7 @@ export default function Dropzone() {
                     </span>
                   </div>
                 </div>
-                <div className="col-span-2 flex my-auto">
+                <div className="col-span-2 lg:justify-normal justify-end  flex my-auto">
                   {action.is_error ? (
                     <Badge
                       variant="destructive"
@@ -342,7 +345,7 @@ export default function Dropzone() {
                   ) : action.is_converting ? (
                     <Badge
                       variant="default"
-                      className="flex w-12 justify-center gap-2 p-1"
+                      className="flex w-full justify-center gap-2 p-1"
                     >
                       <span>Conversion</span>
                       <span className="animate-spin">
@@ -444,7 +447,7 @@ export default function Dropzone() {
                   )}
                 </div>
 
-                <div className="flex my-auto justify-end group space-x-3 -translate-x-20 duration-200 transition-all opacity-0 group-hover:translate-x-0 group-hover:opacity-100 ">
+                <div className="flex w-full float-right my-auto lg:justify-end group space-x-3 lg:-translate-x-20 duration-200 transition-all lg:opacity-0 group-hover:translate-x-0 group-hover:opacity-100 ">
                   {action.is_converted && (
                     <span
                       onClick={() => download(action)}
@@ -467,7 +470,7 @@ export default function Dropzone() {
             ))}
             <div className="flex w-full justify-end">
               {is_done ? (
-                <div className="flex space-x-4 w-fit">
+                <div className="grid lg:grid-cols-2 gap-4 grid-cols-1 w-fit">
                   <Button
                     size="lg"
                     className="rounded-md bg-secondary text-white font-semibold relative py-4 text-md flex gap-2 items-center w-full"

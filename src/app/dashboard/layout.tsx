@@ -7,7 +7,7 @@ type Props = {
 
 const DashboardLayout = (props: Props) => {
   return (
-    <section className="bg-slate-50 min-h-screen flex flex-col space-y-2 mx-auto">
+    <section className="bg-slate-50 min-h-screen flex flex-col space-y-2 mx-auto overflow-y-scroll">
       <Navbar exit={true} />
       {props.children}
     </section>

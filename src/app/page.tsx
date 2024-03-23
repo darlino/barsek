@@ -7,15 +7,15 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex  min-h-screen container  max-w-4xl lg:max-w-6xl 2xl:max-w-7xl flex-col spac-y-2">
+    <main className="flex  min-h-screen lg:container  max-w-4xl lg:max-w-6xl 2xl:max-w-7xl flex-col spac-y-2">
       <Navbar />
-      <div className="flex flex-col lg:px-24 space-y-3 lg:-space-y-20 p-8">
+      <div className="flex flex-col lg:px-24 space-y-3 lg:-space-y-20 p-6">
         <div className="space-y-6">
-          <h1 className="lg:text-6xl font-bold text-center text-4xl text-slate-80 ">
+          <h1 className="lg:text-6xl font-bold text-center text-3xl text-slate-80 ">
             Convertissez n'importe quel{" "}
             <span className="text-third"> fichier </span>
           </h1>
-          <p className="opacity-80 text-center">
+          <p className="opacity-80 text-center lg:text-md text-xs">
             Libérez votre créativité avec Bersek- l'outil en ligne ultime pour
             une conversion multimédia illimitée et gratuite. Transformez vos
             images, vos fichiers audio et vos vidéos sans effort et sans
