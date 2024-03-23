@@ -9,6 +9,7 @@ interface RGBObject {
   r: number;
   g: number;
   b: number;
+  [key: string]: number;
 }
 
 const ColorExtractor = (props: Props) => {
@@ -105,7 +106,7 @@ const ColorExtractor = (props: Props) => {
             return "b";
           }
         };
-        const quantization = (rgbValues: any[], depth: number) => {
+        const quantization = (rgbValues: any[], depth: number): any => {
           const MAX_DEPTH = 4;
           if (depth === MAX_DEPTH || rgbValues.length === 0) {
             const color = rgbValues.reduce(
